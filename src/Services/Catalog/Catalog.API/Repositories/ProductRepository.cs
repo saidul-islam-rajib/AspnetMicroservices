@@ -27,7 +27,7 @@ namespace Catalog.API.Repositories
                     .FirstOrDefaultAsync();
         }
         
-        public async Task<IEnumerable<Product>> GetProductbyName(string name)
+        public async Task<IEnumerable<Product>> GetProductByName(string name)
         {
             FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(p => p.Name, name);
             return await _context.Products
@@ -35,7 +35,7 @@ namespace Catalog.API.Repositories
                     .ToListAsync();
         }
         
-        public async Task<IEnumerable<Product>> GetProductbyCategory(string category)
+        public async Task<IEnumerable<Product>> GetProductByCategory(string category)
         {
             FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(p => p.Category, category);
             return await _context.Products
